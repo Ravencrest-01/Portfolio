@@ -8,7 +8,7 @@ body{
 }
 
 
-/* .center {
+.center {
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -18,7 +18,7 @@ body{
     align-items: center;
     justify-content: center;
     transition: background-color 0.1s ease;
-} */
+}
 
 .container{
     display: flex;
@@ -50,6 +50,7 @@ body{
     bottom: -25vh;
     left: 38vw;
     justify-content: center;
+    cursor: pointer;
 }
 
 .button i{
