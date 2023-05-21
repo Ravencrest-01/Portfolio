@@ -4,10 +4,11 @@ body{
     background-color: #e7decc;
     color: #474747;
     font-family: Roboto;
+    overflow: hidden;
 }
 
 
-/* .center {
+.center {
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -17,14 +18,37 @@ body{
     align-items: center;
     justify-content: center;
     transition: background-color 0.1s ease;
-} */
+}
 
 .container{
     display: flex;
     flex-direction: column;
-    height: 99vh;
-    width: 99vw;
+    height: 100vh;
+    width: 100vw;
     padding: 1vh 0px 0px 1vw;
+}
+
+.name{
+    font-size: 15vw;
+    text-decoration: underline .3vw;
+}
+
+.des{
+    display: flex;
+    width: 50vw;
+    font-size: 2.2vw;
+    padding: 0px 0px 0px 5vw;
+}
+
+.button{
+    position: absolute;
+    display: flex;
+    background-color: #474747;
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    bottom: -25vh;
+    left: 40vw;
 }
 
 .hidden{
