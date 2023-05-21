@@ -8,7 +8,7 @@ body{
 }
 
 
-.center {
+/* .center {
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -18,7 +18,7 @@ body{
     align-items: center;
     justify-content: center;
     transition: background-color 0.1s ease;
-}
+} */
 
 .container{
     display: flex;
@@ -48,8 +48,16 @@ body{
     height: 50%;
     border-radius: 50%;
     bottom: -25vh;
-    left: 40vw;
+    left: 38vw;
+    justify-content: center;
 }
+
+.button i{
+    padding: 3vh 0vw 0vh 0vw;
+    font-size: 10vw;
+    color:#e7decc;
+}
+
 
 .hidden{
    display: none;
