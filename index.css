@@ -20,7 +20,7 @@ body{
     transition: background-color 0.1s ease;
 }
 
-.container{
+.firstContainer{
     display: flex;
     flex-direction: column;
     height: 100vh;
