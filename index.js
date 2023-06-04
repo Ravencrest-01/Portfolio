@@ -1,10 +1,10 @@
 window.addEventListener('load', function() {
   var center = document.querySelector('.center');
-  var container = document.querySelector('.container');
+  var firstContainer = document.querySelector('.firstContainer');
   var button = document.querySelector('.button');
   var hexCodes = ['#474747', '#C7CEDB', '#f7ce5b', '#E7DECC'];
   var wordHex = ['#E7DECC', '#EC0B43', '#5DA271', '#474747'];
-  var fadeDuration = 500; // 0.5 seconds
+  var fadeDuration = 800; // 0.5 seconds
 
   // Function to change the background color and fade away
   function changeBackgroundColorAndFade() {
@@ -16,7 +16,7 @@ window.addEventListener('load', function() {
       if (index >= hexCodes.length) {
         clearInterval(colorInterval);
         center.classList.add('hidden');
-        container.classList.remove('hidden');
+        firstContainer.classList.remove('hidden');
         button.classList.remove('hidden');
       }
     }, fadeDuration);
@@ -25,9 +25,9 @@ window.addEventListener('load', function() {
   // Start the background color change and fade after the page loads
   setTimeout(changeBackgroundColorAndFade, 0); // Start immediately
 
-  // Add event listener to the button for hiding the container
+  // Add event listener to the button for hiding the firstContainer
   button.addEventListener('click', function() {
-    container.classList.add('hidden');
+    firstContainer.classList.add('hidden');
   });
 
   // Button
