@@ -10,6 +10,7 @@ body{
     height: 100vh;
 }
 
+
 .topbar{
     width: 100vw;
     height: 30px;
@@ -86,12 +87,18 @@ body{
 }
 
 .focused{
-    border-top: solid 6px #b482fa;
+    border-top: solid 3.5px #b482fa;
     border-bottom: none;
     background: #21202D;
     color: #ffa058;
 }
 
+.homeContent{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100vw;
+}
 
 .content{
     display: flex;
@@ -99,7 +106,7 @@ body{
     /* flex-grow: 1; */
     height: 100%;
     overflow-y: scroll;
-    overflow-x: none;
+    overflow-x: hidden;
 }
 
 .content::-webkit-scrollbar{
@@ -172,14 +179,10 @@ body{
     caret-color: #b482fa;
 }
 
-
-
 .inputer input:focus{
     outline: none;
     color: #b482fa;
 }
-
-
 
 .rightSide{
     display: flex;
@@ -253,14 +256,28 @@ body{
     margin:0;
 }
 
-.projectContainer2{
+.projectUnfocused{
     z-index: 0;
     transform: scale(0.9) translateY(-25%) ;
     filter: blur(1px) grayscale(50%) opacity(0.8);
+    cursor: pointer;
 }
-.projectContainer1{
-    z-index: 1;     
+
+.projectFocused{
+    z-index: 2;     
 }
+
+.glower{
+    height: 250px;
+    width: 300px;
+    background-color: #7aea55;
+    border-radius: 50%;
+    filter: blur(50px);
+    transform: translateY(2%);
+    z-index: 1;
+}
+
+/* ABOUT PAGE */
 
 .footer{
     bottom: 0;
@@ -324,4 +341,8 @@ body{
     align-items: center;
     padding: 0px 20px 0px 0px;
     font-size: larger;
+}
+
+.hidden{
+    display: none;
 }
