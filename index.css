@@ -148,7 +148,7 @@ body{
 }
 
 .lower label{
-    color: rgb(98, 98, 98);
+    color: rgb(123, 123, 123);
     font-size: 17px;
 }
 
@@ -159,8 +159,27 @@ body{
 }
 
 .inputer i{
-    padding-right: 30px;
+    padding-right: 15px;
 }
+
+.inputer input[type="text"]{
+    background: #21202D;
+    border: none;
+    font-size: 26px;
+    font-weight: bold;
+    /* cursor: text; */
+    color: rgb(97, 97, 97);
+    caret-color: #b482fa;
+}
+
+
+
+.inputer input:focus{
+    outline: none;
+    color: #b482fa;
+}
+
+
 
 .rightSide{
     display: flex;
