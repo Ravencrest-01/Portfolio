@@ -10,7 +10,6 @@ body{
     height: 100vh;
 }
 
-
 .topbar{
     width: 100vw;
     height: 30px;
@@ -277,8 +276,99 @@ body{
     z-index: 1;
 }
 
-/* ABOUT PAGE */
 
+/* Explorer */
+.explorerContainer{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 0;
+    width: 400px;
+    height: 100%;
+    max-height: calc(100% - 77px);
+    margin-top: 25px;
+    margin-bottom: 600px;
+    background: #17151e;
+    border: solid 1px rgb(98, 98, 98);
+    color: rgb(97, 97, 97);
+    overflow-y: scroll;
+    z-index: 101;
+}
+
+.explorerContainer::-webkit-scrollbar{
+    display: none;
+}
+
+.explorerHeader{
+    margin: 0px 0px 0px 30px;
+    font-weight: bold;
+    color: #ffb300;
+}
+
+.myIntrestDrop{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.myIntrestDrop p{
+    margin: 0px 0px 5px 10px;
+}
+
+.myIntrestDrop span{
+    color: #8694aa;
+}
+
+.myIntrestDrop .fa-chevron-down{
+    margin: 0px 10px 0px 0px;
+}
+
+.myIntrestDrop .fa-folder{
+    margin: 0px 7px 0px 0px;
+}
+
+.droper{
+    width: 100%;
+    height: 15px;
+    padding: 0px 0px 5px 0px;
+    align-items: center;
+    overflow: hidden;
+}
+
+ .droper p{
+    height: 3x;
+    padding: 0;
+    margin: 0px 0px 0px 25px;
+    cursor: pointer;
+}
+
+.dropped{
+    width: 100%;
+    height: max-content;
+}
+
+.dropped p{
+    color: #8694aa;
+}
+
+.droper .fa-folder{
+    margin: 0px 10px 0px 0px;
+}
+
+.droper .fa-chevron-right{
+    margin: 0px 10px 0px 0px;
+}
+
+.droper .fa-chevron-down{
+    margin: 0px 10px 0px 0px;
+}
+
+.filesDropped{
+    margin: 5px 0px 0px 55px;
+}
+
+
+/* Footer Page */
 .footer{
     bottom: 0;
     display: flex;
@@ -287,6 +377,8 @@ body{
     width: 100vw;
     border-top: solid 1px rgb(98, 98, 98);
     color: rgb(139, 139, 139);
+    background: #21202D;
+    z-index: 100;
 }
 
 .find{
