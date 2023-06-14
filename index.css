@@ -34,6 +34,7 @@ body{
 
 .red{
     background-color: #FA8282;
+    cursor: pointer;
 }
 
 .yellow{
@@ -71,7 +72,7 @@ body{
     border-bottom:solid 1px rgb(98, 98, 98);
 }
 
-.home, .about, .skills{
+.home, .about, .projects{
     display: flex;
     width: 400px;
     justify-content: center;
@@ -80,7 +81,7 @@ body{
     cursor: pointer;
 }
 
-.home:hover, .about:hover, .skills:hover{
+.home:hover, .about:hover, .projects:hover{
     /* border-top: solid 6px #b482fa; */
     color: #ffa058;
 }
@@ -104,7 +105,7 @@ body{
     width: 100vw;
     /* flex-grow: 1; */
     height: 100%;
-    overflow-y: scroll;
+    overflow-y: hidden;
     overflow-x: hidden;
 }
 
@@ -166,6 +167,7 @@ body{
 
 .inputer i{
     padding-right: 15px;
+    color: #b482fa;
 }
 
 .inputer input[type="text"]{
@@ -276,6 +278,8 @@ body{
     z-index: 1;
 }
 
+/* About me */
+
 
 /* Explorer */
 .explorerContainer{
@@ -309,7 +313,6 @@ body{
     display: flex;
     flex-direction: column;
 }
-
 
 .myIntrestDrop p{
     margin: 0px 0px 5px 10px;
@@ -437,4 +440,39 @@ body{
 
 .hidden{
     display: none;
+}
+
+
+.colorButtonBody{
+    background: #171717;
+}
+
+.colorButtonNav{
+    background: #171717;
+}
+
+.colorButtonSmallNav{
+    background: #282828;
+}
+
+.colorButtonFocused{
+    background: #171717;
+    border-top:solid 3.5px #EDEDED;
+}
+
+.colorButtonFooter{
+    background: #171717;
+}
+
+.colorButtonInput input[type="text"]{
+    background: #171717;
+}
+
+.colorButtonInput input:focus{
+    color: #EDEDED;
+    caret-color: #EDEDED;
+}
+
+.colorButtonInput i{
+    color: #EDEDED;
 }

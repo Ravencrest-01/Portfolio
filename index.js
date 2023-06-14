@@ -1,4 +1,3 @@
-
 const smallNavItems = document.querySelectorAll('.smallNav div:not(.empty)');
 
 const twitterDiv = document.querySelector('.twitter');
@@ -17,10 +16,10 @@ const container2 = document.querySelector('.projectContainer2');
 
 const homeNav = document.querySelector('.home');
 const aboutNav = document.querySelector('.about');
-const skillsNav = document.querySelector('.skills');
+const projectsNav = document.querySelector('.projects');
 const homeContents = document.querySelector('.homeContent');
 const aboutContents = document.querySelector('.aboutContent');
-const skillsContents = document.querySelector('.skillsContent');
+const projectContents = document.querySelector('.ProjectsContent');
 const exploreContainer = document.querySelector('.explorerContainer')
 
 const uiDropper = document.querySelector('.uiDrop');
@@ -44,12 +43,53 @@ const webArrowDown = document.querySelector('.htmlArrow');
 const freeDropper = document.querySelector('.freeDrop');
 const freeArrowDown = document.querySelector('.freeArrow');
 
+const smallNavbar = document.querySelector('.smallNav');
+const textInput = document.querySelector('.inputer');
+const footerSelect = document.querySelector('.footer');
+const bodySelector = document.querySelector('.nothing');
+const colorChanger = document.querySelector('.red');
+
+colorChanger.addEventListener('click', () => {
+    if (!colorChanger.classList.contains('clicked')) {
+        colorChanger.classList.add('clicked');
+        smallNavbar.classList.add('colorButtonSmallNav');
+        textInput.classList.add('colorButtonInput');
+        footerSelect.classList.add('colorButtonFooter');
+        bodySelector.classList.add('colorButtonBody');
+
+        if(!homeNav.classList.contains('focused')){
+            if(!aboutNav.classList.contains('focused')){
+                projectsNav.classList.add('colorButtonFocused');
+            }
+            else{
+                aboutNav.classList.add('colorButtonFocused');
+            }
+        }
+        else{
+            homeNav.classList.add('colorButtonFocused');
+        }
+
+        console.log("Clicked");
+    } else {
+        colorChanger.classList.remove('clicked');
+        smallNavbar.classList.remove('colorButtonSmallNav');
+        textInput.classList.remove('colorButtonInput');
+        footerSelect.classList.remove('colorButtonFooter');
+        bodySelector.classList.remove('colorButtonBody');
+        homeNav.classList.remove('colorButtonFocused');
+        aboutNav.classList.remove('colorButtonFocused');
+        projectsNav.classList.remove('colorButtonFocused');
+    }
+});
+
+
+
 // Navbar EventListners
 homeNav.addEventListener('click',()=>{
     if(!homeNav.classList.contains('focused')) {
         if(!aboutNav.classList.contains('focused')){
-            skillsNav.classList.remove('focused');
-            skillsContents.classList.add('hidden');
+            projectsNav.classList.remove('focused');
+            projectContents.classList.add('hidden');
             aboutContents.classList.add('hidden');
             exploreContainer.classList.add('hidden');
 
@@ -59,7 +99,7 @@ homeNav.addEventListener('click',()=>{
 
         aboutNav.classList.remove('focused');
         aboutContents.classList.add('hidden');
-        skillsContents.classList.add('hidden');
+        projectContents.classList.add('hidden');
         exploreContainer.classList.add('hidden');
 
         homeNav.classList.add('focused');
@@ -69,8 +109,8 @@ homeNav.addEventListener('click',()=>{
 aboutNav.addEventListener('click',()=>{
     if(!aboutNav.classList.contains('focused')) {
         if(!homeNav.classList.contains('focused')){
-            skillsNav.classList.remove('focused');
-            skillsContents.classList.add('hidden');
+            projectsNav.classList.remove('focused');
+            projectContents.classList.add('hidden');
             homeContents.classList.add('hidden');
 
             aboutNav.classList.add('focused');
@@ -80,23 +120,23 @@ aboutNav.addEventListener('click',()=>{
 
         homeNav.classList.remove('focused');
         homeContents.classList.add('hidden');
-        skillsContents.classList.add('hidden');
+        projectContents.classList.add('hidden');
 
         aboutNav.classList.add('focused');
         aboutContents.classList.remove('hidden');
         exploreContainer.classList.remove('hidden');
     }
 });
-skillsNav.addEventListener('click',()=>{
-    if(!skillsNav.classList.contains('focused')) {
+projectsNav.addEventListener('click',()=>{
+    if(!projectsNav.classList.contains('focused')) {
         if(!aboutNav.classList.contains('focused')){
             homeNav.classList.remove('focused');
             homeContents.classList.add('hidden');
             aboutContents.classList.add('hidden');
             exploreContainer.classList.add('hidden');
 
-            skillsNav.classList.add('focused');
-            skillsContents.classList.remove('hidden');
+            projectsNav.classList.add('focused');
+            projectContents.classList.remove('hidden');
         }
 
         aboutNav.classList.remove('focused');
@@ -104,19 +144,85 @@ skillsNav.addEventListener('click',()=>{
         homeContents.classList.add('hidden');
         exploreContainer.classList.add('hidden');
 
-        skillsNav.classList.add('focused');
-        skillsContents.classList.remove('hidden');
+        projectsNav.classList.add('focused');
+        projectContents.classList.remove('hidden');
     }
 });
 
-smallNavItems.forEach(item => {
-    item.addEventListener('click', () =>{
-        smallNavItems.forEach(item => {
-            item.classList.remove('focused');
-        });
-        item.classList.add('focused'); 
-    });
+
+
+
+homeNav.addEventListener('click',()=>{
+
+        if(!homeNav.classList.contains('colorButtonFocused')) {
+            if(colorChanger.classList.contains('clicked')){
+                if(!aboutNav.classList.contains('colorButtonFocused')){
+                    projectsNav.classList.remove('colorButtonFocused');
+                    projectContents.classList.add('hidden');
+                    aboutContents.classList.add('hidden');
+                    exploreContainer.classList.add('hidden');
+
+                    homeNav.classList.add('colorButtonFocused');
+                    homeContents.classList.remove('hidden');
+                }
+
+                aboutNav.classList.remove('colorButtonFocused');
+                aboutContents.classList.add('hidden');
+                projectContents.classList.add('hidden');
+                exploreContainer.classList.add('hidden');
+
+                homeNav.classList.add('colorButtonFocused');
+                homeContents.classList.remove('hidden');
+            }
+        }
 });
+aboutNav.addEventListener('click',()=>{
+        if(!aboutNav.classList.contains('colorButtonFocused')) {
+            if(colorChanger.classList.contains('clicked')){
+                if(!homeNav.classList.contains('colorButtonFocused')){
+                    projectsNav.classList.remove('colorButtonFocused');
+                    projectContents.classList.add('hidden');
+                    homeContents.classList.add('hidden');
+
+                    aboutNav.classList.add('colorButtonFocused');
+                    aboutContents.classList.remove('hidden');
+                    exploreContainer.classList.remove('hidden');
+                }
+
+                homeNav.classList.remove('colorButtonFocused');
+                homeContents.classList.add('hidden');
+                projectContents.classList.add('hidden');
+
+                aboutNav.classList.add('colorButtonFocused');
+                aboutContents.classList.remove('hidden');
+                exploreContainer.classList.remove('hidden');
+            }
+        }
+});
+projectsNav.addEventListener('click',()=>{
+    if(colorChanger.classList.contains('clicked')){
+        if(!projectsNav.classList.contains('colorButtonFocused')) {
+            if(!aboutNav.classList.contains('colorButtonFocused')){
+                homeNav.classList.remove('colorButtonFocused');
+                homeContents.classList.add('hidden');
+                aboutContents.classList.add('hidden');
+                exploreContainer.classList.add('hidden');
+
+                projectsNav.classList.add('colorButtonFocused');
+                projectContents.classList.remove('hidden');
+            }
+
+            aboutNav.classList.remove('colorButtonFocused');
+            aboutContents.classList.add('hidden');
+            homeContents.classList.add('hidden');
+            exploreContainer.classList.add('hidden');
+
+            projectsNav.classList.add('colorButtonFocused');
+            projectContents.classList.remove('hidden');
+        }
+    }
+});
+
 
 
 // Link opener Footer
