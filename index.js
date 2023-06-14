@@ -48,7 +48,25 @@ const textInput = document.querySelector('.inputer');
 const footerSelect = document.querySelector('.footer');
 const bodySelector = document.querySelector('.nothing');
 const colorChanger = document.querySelector('.red');
+const glowChanger = document.querySelector('.glower');
 
+const qrHidder = document.querySelector('.yellow');
+const rickQR = document.querySelector('.rickQR');
+
+qrHidder.addEventListener('click', ()=>{
+    if(!qrHidder.classList.contains('clicked')){
+        qrHidder.classList.add('clicked');
+        rickQR.classList.remove('hidden');
+    }
+    else{
+        qrHidder.classList.remove('clicked');
+        rickQR.classList.add('hidden');
+    }
+})
+
+
+
+// colorchanger full
 colorChanger.addEventListener('click', () => {
     if (!colorChanger.classList.contains('clicked')) {
         colorChanger.classList.add('clicked');
@@ -56,6 +74,8 @@ colorChanger.addEventListener('click', () => {
         textInput.classList.add('colorButtonInput');
         footerSelect.classList.add('colorButtonFooter');
         bodySelector.classList.add('colorButtonBody');
+        glowChanger.classList.add('colorButtonGlow');
+        exploreContainer.classList.add('colorButtonExplorer');
 
         if(!homeNav.classList.contains('focused')){
             if(!aboutNav.classList.contains('focused')){
@@ -79,6 +99,8 @@ colorChanger.addEventListener('click', () => {
         homeNav.classList.remove('colorButtonFocused');
         aboutNav.classList.remove('colorButtonFocused');
         projectsNav.classList.remove('colorButtonFocused');
+        glowChanger.classList.remove('colorButtonGlow');
+        exploreContainer.classList.remove('colorButtonExplorer');
     }
 });
 
@@ -151,7 +173,7 @@ projectsNav.addEventListener('click',()=>{
 
 
 
-
+// ColorChanger Navbar
 homeNav.addEventListener('click',()=>{
 
         if(!homeNav.classList.contains('colorButtonFocused')) {
