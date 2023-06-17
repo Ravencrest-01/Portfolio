@@ -312,7 +312,6 @@ ol.aboutMeList {
 ol.aboutMeList li {
       list-style-type: none;
       display: flex;
-      
       color: rgb(89, 89, 89);
       
 }
