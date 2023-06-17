@@ -284,9 +284,7 @@ body{
 }
 
 /* About me */
-.abouter{
-    align-content: normal;
-}
+
 
 
 .aboutContent{
@@ -298,6 +296,15 @@ body{
     text-align: center;
     height: 100%;
     overflow: hidden;
+    user-select: text;
+}
+
+.aboutContent .outerAbout::selection{
+    background-color: #b3b3b5;
+}
+
+.aboutContent .innerAbout::selection, .aboutContent .textAbout::selection{
+    background-color: #595962;
 }
 
 ol.aboutMeList {
@@ -326,8 +333,9 @@ ol.aboutMeList li {
     border-left: solid rgb(98, 98, 98) 2px;
     padding: 0px 0px 0px 30px;
     
-    color: rgb(79, 79, 79);
+    color: rgb(90, 90, 90);
 }
+
 
 .aboutMeList .textAbout{
     color: rgb(146, 146, 146);
@@ -336,7 +344,6 @@ ol.aboutMeList li {
 .aboutMeList .innerAbout{
     padding: 0px 10px 0px 30px;
     border-left: solid 2px rgb(98, 98, 98);
-    
     color: rgb(146, 146, 146);
 }
 
