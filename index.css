@@ -302,18 +302,18 @@ body{
 
 ol.aboutMeList {
     counter-reset: my-counter 30;
-    margin: 0px 10px 0px 100px;
+    margin: 5px 10px 0px 100px;
     padding: 0;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
 }
 ol.aboutMeList li {
       list-style-type: none;
       display: flex;
-      overflow: hidden;
+      
+      color: rgb(89, 89, 89);
       
 }
   ol.aboutMeList li::before {
@@ -326,13 +326,19 @@ ol.aboutMeList li {
     margin: 0px 10px 0px 10px;
     border-left: solid rgb(98, 98, 98) 2px;
     padding: 0px 0px 0px 30px;
-    overflow: hidden;
+    
+    color: rgb(79, 79, 79);
+}
+
+.aboutMeList .textAbout{
+    color: rgb(146, 146, 146);
 }
 
 .aboutMeList .innerAbout{
     padding: 0px 10px 0px 30px;
     border-left: solid 2px rgb(98, 98, 98);
-    overflow: hidden;
+    
+    color: rgb(146, 146, 146);
 }
 
 .upperFade,.lowerFade{

@@ -43,6 +43,7 @@ const webArrowDown = document.querySelector('.htmlArrow');
 const freeDropper = document.querySelector('.freeDrop');
 const freeArrowDown = document.querySelector('.freeArrow');
 
+const bigNav = document.querySelector('.navbar');
 const smallNavbar = document.querySelector('.smallNav');
 const textInput = document.querySelector('.inputer');
 const footerSelect = document.querySelector('.footer');
@@ -76,7 +77,8 @@ colorChanger.addEventListener('click', () => {
         bodySelector.classList.add('colorButtonBody');
         glowChanger.classList.add('colorButtonGlow');
         exploreContainer.classList.add('colorButtonExplorer');
-
+        bigNav.classList.add('colorButtonNav');
+        
         if(!homeNav.classList.contains('focused')){
             if(!aboutNav.classList.contains('focused')){
                 projectsNav.classList.add('colorButtonFocused');
@@ -88,7 +90,7 @@ colorChanger.addEventListener('click', () => {
         else{
             homeNav.classList.add('colorButtonFocused');
         }
-
+        
         console.log("Clicked");
     } else {
         colorChanger.classList.remove('clicked');
@@ -101,6 +103,7 @@ colorChanger.addEventListener('click', () => {
         projectsNav.classList.remove('colorButtonFocused');
         glowChanger.classList.remove('colorButtonGlow');
         exploreContainer.classList.remove('colorButtonExplorer');
+        bigNav.classList.remove('colorButtonNav');
     }
 });
 
