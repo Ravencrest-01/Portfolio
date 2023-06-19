@@ -42,7 +42,7 @@
                     <label for="code">// write the code below to continue:</label><br>
                     <div class="inputer">
                         <i class="fa-solid fa-chevron-right fa-2x"></i>
-                        <input type="text" id="code" name="code" placeholder="_start"><i class="fas fa-dash caret"></i>
+                        <input type="text" id="code" name="code" placeholder="_start" onkeypress="handleKeyPress(event)"><i class="fas fa-dash caret"></i>
                     </div>
                 </div>
             </div>
@@ -320,7 +320,7 @@
                     <div><i class="fa-solid fa-file"></i> HTML.txt</div>
                     <div><i class="fa-solid fa-file"></i> CSS.txt</div>
                     <div><i class="fa-solid fa-file"></i> Bootstrap.txt</div>
-                    <div><i class="fa-solid fa-file"></i> Swift.txt</div>
+                    <div><i class="fa-solid fa-file"></i> Tailwind.txt</div>
                 </div>
             </div>
             <div class="freeDrop droper"><p><i class="fa-solid fa-chevron-right fa-xs freeArrow" style="color: #707070;"></i><i class="fa-solid fa-folder"></i>Free Time</p>
@@ -343,11 +343,20 @@
         </div>
     </div>
 
+    <div class="contact hidden">
+    <div class="gmailHeader">Mail me on :-</div>
+        <div class="gmail">
+            <div class="gmailLink">ritiksingh1859@gmail.com</div>
+            <canvas id="canvasScratcher"></canvas>
+        </div>
+    </div>
+
     <div class="footer">
         <div class="find">find me on:</div>
         <div class="twitter"><i class="fa-brands fa-twitter fa-2x"></i></div>
         <div class="git"><i class="fa-brands fa-github fa-2x"></i></div>
         <div class="linked"><i class="fa-brands fa-linkedin-in fa-2x"></i></div>
+        <div class="discord hidden"><i class="fa-brands fa-discord fa-2x"></i></div>
         <div class="time"></div>
     </div>
 

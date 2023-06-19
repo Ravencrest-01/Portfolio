@@ -46,6 +46,7 @@ body{
 
 .green{
     background: #8CFFAB;
+    cursor: pointer;
 }
 
 .topbar p{
@@ -551,6 +552,7 @@ ol.aboutMeList li {
     margin: 25px 0px 25px 0px;
     justify-content: center;
     background: #ffb300;
+    color: #3d3d3d;
     font-weight: bold;
     height: 20px;
 }
@@ -585,7 +587,7 @@ ol.aboutMeList li {
     justify-content: center;
 }
 
-.twitter, .linked, .git{
+.twitter, .linked, .git, .discord{
     display: flex;
     height: 100%;
     width: 80px;
@@ -594,6 +596,14 @@ ol.aboutMeList li {
     align-items: center;
     cursor: pointer;
     transition: all 0.3s ease;
+}
+
+.discord i{
+    color: #7289da;
+}
+
+.discord:hover{
+    background-color: #7289da;
 }
 
 .twitter i{
@@ -706,6 +716,86 @@ ol.aboutMeList li {
     text-decoration: underline 0.5px;
 }
 
+.error-shake {
+    animation: shake 0.5s linear;
+  }
+  
+  @keyframes shake {
+    10%, 90% {
+      transform: translateX(-5px);
+    }
+  
+    20%, 80% {
+      transform: translateX(5px);
+    }
+  
+    30%, 50%, 70% {
+      transform: translateX(-10px);
+    }
+  
+    40%, 60% {
+      transform: translateX(10px);
+    }
+}
+  
+
+.contact {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(72, 71, 71, 0.5);
+    border: solid 2px rgb(152, 128, 128);
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(2px);
+    z-index: 99;
+    padding: 30px;
+}
+
+
+
+.contact .gmailLink{
+    backdrop-filter: none;
+}
+
+
+.gmail {
+    display: flex;
+    position: relative;
+    height: 30px;
+    text-align: center;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.gmailHeader, .gmailLink{
+    text-align: center;
+    user-select: text;
+}
+    
+#canvasScratcher {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30px;
+    width: 100%;
+}
+
+.copyButton{
+    justify-content: center;
+    text-align: center;
+    margin: 30px 0px 0px 0px;
+    background-color: black;
+    border-radius: 3px;
+    border: solid 1px rgb(71, 71, 71);
+}
+
+
 .hidden{
     display: none;
 }
+
+  

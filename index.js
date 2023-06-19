@@ -9,6 +9,9 @@ const gitIcon = document.querySelector('.fa-github');
 const linkedDiv = document.querySelector('.linked');
 const linkedIcon = document.querySelector('.fa-linkedin-in');
 
+const discordDiv = document.querySelector('.discord')
+const discordIcon = document.querySelector('.fa-discord')
+
 const timeElement = document.querySelector('.time');
 
 const container1 = document.querySelector('.projectContainer1');
@@ -48,11 +51,16 @@ const smallNavbar = document.querySelector('.smallNav');
 const textInput = document.querySelector('.inputer');
 const footerSelect = document.querySelector('.footer');
 const bodySelector = document.querySelector('.nothing');
+
 const colorChanger = document.querySelector('.red');
 const glowChanger = document.querySelector('.glower');
 
 const qrHidder = document.querySelector('.yellow');
 const rickQR = document.querySelector('.rickQR');
+
+// const gmailOpner = document.querySelector('.green');
+// const contactOpener = document.querySelector('.contact');
+// const canvas = document.getElementById('canvasScratcher');
 
 qrHidder.addEventListener('click', ()=>{
     if(!qrHidder.classList.contains('clicked')){
@@ -64,6 +72,20 @@ qrHidder.addEventListener('click', ()=>{
         rickQR.classList.add('hidden');
     }
 })
+
+
+// gmailOpner.addEventListener('click', executeAfterClick => {
+//     console.log('hi');
+//     if (!gmailOpner.classList.contains('clicked')) {
+//       gmailOpner.classList.add('clicked');
+//       contactOpener.classList.remove('hidden');
+//       canvas.style.display = 'block';
+//     } else {
+//       gmailOpner.classList.remove('clicked');
+//       contactOpener.classList.add('hidden');
+//       canvas.style.display = 'none';
+//     }
+//   });
 
 
 
@@ -264,6 +286,19 @@ twitterDiv.addEventListener('click',()=>{
 });
 
 
+discordDiv.addEventListener('mouseenter', () => {
+    discordIcon.style.transition = 'color 0.3s ease';
+    discordIcon.style.color='#ffffff';
+});
+discordDiv.addEventListener('mouseleave', () => {
+    discordIcon.style.transition = 'color 0.3s ease';
+    discordIcon.style.color='#7289da';
+});
+discordDiv.addEventListener('click',()=>{
+    window.open('https://discordapp.com/users/678896410766213131');
+});
+
+
 gitDiv.addEventListener('mouseenter', () => {
     gitIcon.style.transition = 'color 0.3s ease';
     gitIcon.style.color='#ffffff';
@@ -423,3 +458,235 @@ freeDropper.addEventListener('click', ()=>{
         freeArrowDown.classList.add('fa-chevron-right');
     }
 });
+
+
+function handleKeyPress(event) {
+    if (event.keyCode === 13) {
+      var input = document.getElementById("code").value;
+      console.log(input); 
+        if(input === "_start"){
+            console.log("this is correct");
+            discordDiv.classList.remove('hidden');
+            discordDiv.classList.add('error-shake');
+
+        }
+        else {
+            var codeElement = document.getElementById("code");
+            codeElement.classList.add("error-shake");
+            codeElement.style.color = "#FF0060";
+
+            // Remove the error styles after a certain duration
+            setTimeout(function() {
+                codeElement.classList.remove("error-shake");
+                codeElement.style.color = "";
+            }, 1000);
+            }
+    }
+  }
+
+
+  // Get the canvas element
+
+//   function executeAfterClick() {
+//     const ctx = canvas.getContext('2d');
+  
+//     // Set the canvas size
+//     canvas.width = canvas.clientWidth;
+//     canvas.height = canvas.clientHeight;
+  
+//     // Set initial state
+//     let isDrawing = false;
+//     let lastX = 0;
+//     let lastY = 0;
+//     let revealThreshold = 0.7; // Percentage of scratched area to trigger reveal
+  
+//     // Initialize the scratcher
+//     initCanvas();
+  
+//     // Event listeners for drawing
+//     canvas.addEventListener('mousedown', startDrawing);
+//     canvas.addEventListener('mousemove', draw);
+//     canvas.addEventListener('mouseup', stopDrawing);
+//     canvas.addEventListener('mouseout', stopDrawing);
+  
+//     function initCanvas() {
+//       // Fill the canvas with a grey color
+//       ctx.fillStyle = '#808080';
+//       ctx.fillRect(0, 0, canvas.width, canvas.height);
+//     }
+  
+//     function startDrawing(e) {
+//       isDrawing = true;
+//       [lastX, lastY] = [e.offsetX, e.offsetY];
+//     }
+  
+//     function draw(e) {
+//       if (!isDrawing) return;
+  
+//       ctx.globalCompositeOperation = 'destination-out'; // Reveal the content
+//       ctx.beginPath();
+//       ctx.moveTo(lastX, lastY);
+//       ctx.lineTo(e.offsetX, e.offsetY);
+//       ctx.lineWidth = 20;
+//       ctx.lineCap = 'round';
+//       ctx.strokeStyle = 'rgba(0, 0, 0, 1)';
+//       ctx.stroke();
+  
+//       [lastX, lastY] = [e.offsetX, e.offsetY];
+  
+//       // Check the percentage of the canvas revealed
+//       const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+//       const pixels = imageData.data;
+//       let totalTransparentPixels = 0;
+  
+//       for (let i = 0; i < pixels.length; i += 4) {
+//         if (pixels[i + 3] === 0) {
+//           totalTransparentPixels++;
+//         }
+//       }
+  
+//       const revealedAreaPercentage = totalTransparentPixels / (pixels.length / 4);
+  
+//       // If the revealed area exceeds the threshold, reveal the email beneath
+//       if (revealedAreaPercentage >= revealThreshold) {
+//         revealEmail();
+//       }
+//     }
+  
+//     function revealEmail() {
+//       // Show the email by removing the canvas
+//       canvas.style.display = 'none';
+  
+//       // Enable click functionality for the revealed email
+//       const emailLink = document.querySelector('.gmailLink');
+//       emailLink.style.cursor = 'pointer';
+//       emailLink.addEventListener('click', copyEmailToClipboard);
+//     }
+  
+//     function copyEmailToClipboard() {
+//       const emailText = document.querySelector('.gmailLink').innerText;
+  
+//       // Create a temporary textarea element to copy the text to the clipboard
+//       const textarea = document.createElement('textarea');
+//       textarea.value = emailText;
+//       document.body.appendChild(textarea);
+//       textarea.select();
+//       document.execCommand('copy');
+//       document.body.removeChild(textarea);
+  
+//       // Add visual feedback or notification to indicate the email has been copied
+//       alert('Email copied to clipboard!');
+//     }
+  
+//     function stopDrawing() {
+//       isDrawing = false;
+//     }
+//   }
+
+const gmailOpner = document.querySelector('.green');
+const contactOpener = document.querySelector('.contact');
+const canvas = document.getElementById('canvasScratcher');
+const ctx = canvas.getContext('2d');
+let isDrawing = false;
+let lastX = 0;
+let lastY = 0;
+let revealThreshold = 0.7; // Percentage of scratched area to trigger reveal
+
+gmailOpner.addEventListener('click', () => {
+  console.log('hi');
+  if (!gmailOpner.classList.contains('clicked')) {
+    gmailOpner.classList.add('clicked');
+    contactOpener.classList.remove('hidden');
+    canvas.style.display = 'block';
+    initCanvas();
+  } else {
+    gmailOpner.classList.remove('clicked');
+    contactOpener.classList.add('hidden');
+    canvas.style.display = 'none';
+  }
+});
+
+function initCanvas() {
+  // Set the canvas size
+  canvas.width = canvas.clientWidth;
+  canvas.height = canvas.clientHeight;
+
+  // Fill the canvas with a grey color
+  ctx.fillStyle = '#808080';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // Event listeners for drawing
+  canvas.addEventListener('mousedown', startDrawing);
+  canvas.addEventListener('mousemove', draw);
+  canvas.addEventListener('mouseup', stopDrawing);
+  canvas.addEventListener('mouseout', stopDrawing);
+}
+
+function startDrawing(e) {
+  isDrawing = true;
+  [lastX, lastY] = [e.offsetX, e.offsetY];
+}
+
+function draw(e) {
+  if (!isDrawing) return;
+
+  ctx.globalCompositeOperation = 'destination-out'; // Reveal the content
+  ctx.beginPath();
+  ctx.moveTo(lastX, lastY);
+  ctx.lineTo(e.offsetX, e.offsetY);
+  ctx.lineWidth = 20;
+  ctx.lineCap = 'round';
+  ctx.strokeStyle = 'rgba(0, 0, 0, 1)';
+  ctx.stroke();
+
+  [lastX, lastY] = [e.offsetX, e.offsetY];
+
+  // Check the percentage of the canvas revealed
+  const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  const pixels = imageData.data;
+  let totalTransparentPixels = 0;
+
+  for (let i = 0; i < pixels.length; i += 4) {
+    if (pixels[i + 3] === 0) {
+      totalTransparentPixels++;
+    }
+  }
+
+  const revealedAreaPercentage = totalTransparentPixels / (pixels.length / 4);
+
+  // If the revealed area exceeds the threshold, reveal the email beneath
+  if (revealedAreaPercentage >= revealThreshold) {
+    revealEmail();
+  }
+}
+
+function revealEmail() {
+  // Show the email by removing the canvas
+  canvas.style.display = 'none';
+
+  // Enable click functionality for the revealed email
+  const emailLink = document.querySelector('.gmailLink');
+  emailLink.style.cursor = 'pointer';
+  emailLink.addEventListener('click', copyEmailToClipboard);
+}
+
+function copyEmailToClipboard() {
+  const emailText = document.querySelector('.gmailLink').innerText;
+
+  // Create a temporary textarea element to copy the text to the clipboard
+  const textarea = document.createElement('textarea');
+  textarea.value = emailText;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand('copy');
+  document.body.removeChild(textarea);
+
+  // Add visual feedback or notification to indicate the email has been copied
+  alert('Email copied to clipboard!');
+}
+
+function stopDrawing() {
+  isDrawing = false;
+}
+
+  
