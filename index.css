@@ -587,7 +587,7 @@ ol.aboutMeList li {
     justify-content: center;
 }
 
-.twitter, .linked, .git, .discord{
+.twitter, .linked, .git, .discord, .email{
     display: flex;
     height: 100%;
     width: 80px;
@@ -596,6 +596,14 @@ ol.aboutMeList li {
     align-items: center;
     cursor: pointer;
     transition: all 0.3s ease;
+}
+
+.email i{
+    color: rgb(144, 57, 168);
+}
+
+.email:hover{
+    background-color: rgb(144, 57, 168);
 }
 
 .discord i{
