@@ -790,6 +790,7 @@ ol.aboutMeList li {
     left: 0;
     height: 30px;
     width: 100%;
+    cursor: pointer;
 }
 
 .copyButton{
